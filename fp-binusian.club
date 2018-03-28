@@ -1,0 +1,59 @@
+server 
+{ 
+	listen 443; 
+
+	root /var/www/htm;; 
+
+	index index.html; 
+
+	server_name fp-binusian.club; 
+
+	ssl on; 
+	ssl_certificate /etc/nginx/certs/YOURWEBSITE.com/ssl_public.pem; 
+	ssl_certificate_key /etc/nginx/YOURWEBSITE.com/ssl_private.key; 
+
+	location / 
+	{ 
+		try_files $uri $uri/ /index.html?/$query_string; 
+	}
+	
+	location ~ \.php$ 
+	{ 
+		try_files $uri =404; 
+		fastcgi_split_path_info ^(.+\.php)(.*)$; 
+		fastcgi_pass unix:/var/run/php/php7.2-fpm.sock; 
+		fastcgi_index index.php; 
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; 
+		include fastcgi_params; 
+	}
+} 
+server 
+{ 
+	listen 443; 
+
+	root /var/www/fp-binusian; 
+
+	index index.html; 
+
+	server_name fp-binusian.club; 
+
+	ssl on; 
+	ssl_certificate /etc/nginx/certs/fp-binusian.club/ssl_public.pem; 
+	ssl_certificate_key /etc/nginx/certs/fp-binusian.club/ssl_private.key; 
+
+	location / 
+	{ 
+		try_files $uri $uri/ /index.html?/$query_string; 
+	}
+	
+	location ~ \.php$ 
+	{ 
+		try_files $uri =404; 
+		fastcgi_split_path_info ^(.+\.php)(.*)$; 
+		fastcgi_pass unix:/var/run/php/php7.2-fpm.sock; 
+		fastcgi_index index.php; 
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; 
+		include fastcgi_params; 
+	}
+} 
+
