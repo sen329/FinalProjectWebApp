@@ -250,3 +250,40 @@ php -v
 sqlcmd -S localhost -U SA
 msql
 mysql -u root -p
+echo "# FinalProjectWebApp" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git config --global user.email "hans.hilman@gmail.com"
+git config --global user.name "Hans"
+git commit -m "first commit"
+git push
+git remote add origin https://github.com/sen329/FinalProjectWebApp.git
+git push
+git push -u origin master
+rm index.html
+git add .
+git commit -m "commit"
+git push origin master
+mysqldump -u root -p finalproject > fp.sql
+git add .
+git commit -m "databasefile"
+git push origin master
+nano readme.md
+git push
+nano readme.md
+git push
+git add . 
+git commit -m "test"
+git push
+git remote -v
+git push origin master
+ls
+nano index.html 
+git add .
+git commit -m "test2"
+git push origin master
+mysql -p -u root finalproject < fp.sql
+mysql -p -u 
+mysql 
+mysql
