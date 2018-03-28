@@ -30,7 +30,8 @@ CREATE TABLE `file` (
   `file` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idUser` (`idUser`),
-  CONSTRAINT `file_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`)
+  CONSTRAINT `file_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`),
+  CONSTRAINT `fk_idUser` FOREIGN KEY (`id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -78,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-28  5:18:47
+-- Dump completed on 2018-03-28  5:29:38
